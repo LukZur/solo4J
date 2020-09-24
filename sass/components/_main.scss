@@ -3,8 +3,8 @@
   position: absolute; /* Fixed Sidebar (stay in place on scroll) */
   left: $sidebar-width;
   z-index: 0;
-  top: 100px;
-  background-color: #C0C0C0;
+  top: 64px;
+  background-color: $grey-tab-color;
 }
 
 .main-section {
@@ -33,7 +33,7 @@
       width: 25px;
       height: 22px;
       font-size: 18px;
-      //  filter: invert(83%) sepia(78%) saturate(0%) hue-rotate(202deg) brightness(93%) contrast(85%);
+      // filter: invert(83%) sepia(78%) saturate(0%) hue-rotate(202deg) brightness(93%) contrast(85%);
       filter: invert(95%) sepia(97%) saturate(14%) hue-rotate(213deg) brightness(104%) contrast(104%);
     }
   }
@@ -102,9 +102,9 @@
 }
 
 /* links */
-// .links .menu-icon {
-//   display: none;
-// }
+.links .menu-icon {
+  display: none;
+}
 
 .links-table a {
   display: block;
@@ -120,12 +120,20 @@
     padding: 10px 320px 10px 0;
     text-align: left;
   }
-  & tr {
-    border-bottom: 1px solid black;
-    & :hover {
+}
+
+.links-table tr {
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      height: 70px;
+}
+
+.links-table tr:hover {
       background-color: $grey-tab-color;
-    }
-  }
+}
+
+.links-table tr:hover .menu-icon {
+  display: block;
 }
 
 .links .component-links {
@@ -160,4 +168,44 @@ a.btn-orange.button-add {
 .links-icon {
   color: $chart-ftd-color;
   filter: invert(83%) sepia(78%) saturate(0%) hue-rotate(202deg) brightness(93%) contrast(85%);
+}
+
+  #myChart{
+    width: 1000px;
+    height: 500px;
+    // padding: 0 317px;
+  }
+
+/* Media */
+@media (max-width: 767px) {
+  .topbar .block-topbar {
+    padding-right: 400px;
+  }
+  .links .component-links {
+    flex-direction: column;
+  }
+  // .statistics  .component-calendar {
+  //   flex-direction: column;
+  // }
+  // .calendar-box {
+  //   flex-direction: column;
+  // }
+
+}
+
+
+@media(max-width: 767px) {
+  // @include grid('sm');
+}
+
+@media(min-width: 768px) {
+  // @include grid('md');
+}
+
+@media(min-width: 992px) {
+  // @include grid('lg');
+}
+
+@media(min-width: 1200px) {
+  // @include grid('xl');
 }
